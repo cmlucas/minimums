@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Minimums - Fly the numbers</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__text">
+          <h1 class="header__legal_heading">
+            <span class="highlighted">Terms and Conditions</span>
+          </h1>
+          <p class="header__legal_text">
+<br><br>Last updated: 12/03/2023<br><br>
+
+Please read these Terms and Conditions ("Terms," "Agreement") carefully before using the "Minimums" mobile application ("the App") operated by [Your Company Name] ("us," "we," or "our").<br><br>
+
+By accessing or using the App, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not use the App.<br><br>
+
+You should be aware that there are certain things that Cody Lucas will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but Cody Lucas cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.<br><br>
+
+<strong>Use of the App</strong><br><br>
+
+<strong>Personal Minimums Check:</strong> The "Minimums" app is designed to provide users with a cursory personal minimums check related to weather conditions. It is not a substitute for a comprehensive weather briefing from a qualified aviation professional.<br><br>
+
+<strong>Not a Substitute for Professional Briefing:</strong> Users are advised that the information provided by the App does not replace a proper weather brief, and it should only be used as a preliminary check. For a complete understanding of weather conditions, users must seek a comprehensive briefing from a qualified aviation weather source.<br><br>
+
+<strong>Responsibility for Decisions</strong> Users are solely responsible for the decisions made based on the information provided by the App. We do not assume any responsibility for the accuracy or reliability of the information.<br><br>
+
+<strong>Intellectual Property</strong><br><br>
+
+The App and its original content, features, and functionality are owned by [Your Company Name] and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.<br><br>
+
+<strong>Termination</strong><br><br>
+
+We may terminate or suspend access to our App immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.<br><br>
+
+<strong>Changes to This Terms and Conditions</strong><br><br>
+
+We reserve the right to modify or replace these Terms at any time. Any changes will be effective immediately upon posting on the App. Your continued use of the App after any such changes constitutes your acceptance of the new Terms.<br><br>
+
+<strong>Contact Us</strong><br><br>
+
+If you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me at cody.m.lucas@gmail.com.<br><br>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <footer class="section footer">
+      <section class="footer__container container">
+        <!--<article class="footer__links">
+          <p class="footer__links-heading">Product</p>
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Product</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Product</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Product</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Product</a>
+            </li>
+          </ul>
+        </article>-->
+
+      <!--  <article class="footer__links">
+          <p class="footer__links-heading">Company</p>
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">About Us</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Careers</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Write for us</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Team</a>
+            </li>
+          </ul>
+        </article> -->
+
+        <article class="footer__links">
+          <p class="footer__links-heading">Legal</p>
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Terms & Conditions</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Privacy Policy</a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      var hamburger = document.querySelector(".nav__hamburger");
+      var body = document.querySelector("body");
+      var mobileNavigation = document.querySelector(".nav__mobile-nav");
+
+      AOS.init();
+
+      function toggleMobileNav(e) {
+        body.classList.toggle("mobile-nav-open");
+      }
+
+      function isModalOpen() {
+        return body.classList.contains("mobile-nav-open") ? true : false;
+      }
+
+      // FIXME: Find a better way to close modal when body is clicked
+      function closeMobileMenu(e) {
+        console.log(
+          e.target.classList.contains("nav__mobiile-item") ||
+            e.target.classList.contains("nav__hamburger") ||
+            e.target.classList.contains("nav__container")
+        );
+        if (
+          isModalOpen() &&
+          (e.target.classList.contains("nav__mobiile-item") ||
+            e.target.classList.contains("nav__hamburger"))
+        )
+          return;
+
+        body.classList.remove("mobile-nav-open");
+      }
+
+      window.addEventListener("click", closeMobileMenu);
+
+      hamburger.addEventListener("click", toggleMobileNav);
+    </script>
+  </body>
+</html>
